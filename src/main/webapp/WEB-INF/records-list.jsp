@@ -29,7 +29,7 @@
         <td><%=item.get("last-name")%></td>
         <td><%=item.get("address")%></td>
         <td><a href="/records/read?first-name=<%=item.get("first-name")%>&last-name=<%=item.get("last-name")%>">Read</a></td>
-        <td><a href="/records/update?first-name=<%=item.get("first-name")%>&last-name=<%=item.get("last-name")%>&address=<%=item.get("address")%>">Update</a></td>
+        <td><a href="/records/update?first-name=<%=item.get("first-name")%>&last-name=<%=item.get("last-name")%>">Update</a></td>
         <td><a href="/records/delete?first-name=<%=item.get("first-name")%>&last-name=<%=item.get("last-name")%>">Delete</a></td>
     </tr>
     <%

@@ -33,6 +33,21 @@ public class RecordsUpdateServlet extends RecordCreateServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/records-update.jsp");
-        requestDispatcher.forward(request, response);
+        String firstName = request.getParameter("first-name");
+        String lastName = request.getParameter("last-name");
+        String address = addressBook.read(firstName, lastName);
+        if (address != null) {
+            request.setAttribute("address", address);
+            requestDispatcher.forward(request, response);
+        }
+        else {
+            response.setStatus(404);
+            response.getWriter().print(
+                    String.format(
+                            "Person with name '%s' not found in Address Book!",
+                            request.getParameter("first-name") + " " + request.getParameter("last-name")
+                    )
+            );
+        }
     }
 }

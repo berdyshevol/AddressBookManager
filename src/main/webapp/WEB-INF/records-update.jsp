@@ -17,7 +17,7 @@
         </tr>
         <tr>
             <td><label for="address">Address: </label></td>
-            <td><textarea id="address" name="address" rows="3" col="10"><%=request.getParameter("address")%></textarea></td>
+            <td><textarea id="address" name="address" rows="3" col="10"><%=request.getAttribute("address")%></textarea></td>
         </tr>
         <tr>
             <td><input type="submit" value="Update"></td>
